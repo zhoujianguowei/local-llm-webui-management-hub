@@ -108,6 +108,11 @@
 
 ## 📂 资源下载
 
+### GitHub Releases（推荐 ⭐）
+**本仓库 Releases 发布的是全功能完全版（不设任何功能阉割）**，可直接从 GitHub Releases 列表中下载最新版本试用：
+👉 **[前往 Releases 下载完全版](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases/latest)**
+
+### 夸克网盘资源
 所有必要资源已整合至夸克网盘，请按需下载：
 
 - **基础环境 (JDK & llama.cpp 各平台版本)**: [点击下载](https://pan.quark.cn/s/24cf8a0d7419) | 提取码：`i2N2`
