@@ -1,10 +1,5 @@
 # Mixed Multimodal LLM Management System
 
-> ### 🌐 Language / 语言
-> [**English**](README_en.md) | [**中文**](README_zh.md)
-
----
-
 ## 📋 System Overview
 
 This system (Mixed Multimodal LLM Management System) is a comprehensive management platform for locally deployed large language models, integrating **file management, user permissions, model scheduling, AI chat, and system monitoring** into one secure, efficient, and user-friendly solution.
@@ -26,7 +21,7 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 >
 > ⚠️ **GPU Monitoring Compatibility Note**: GPU monitoring depends on the `nvidia-smi` tool and **only supports systems with NVIDIA GPUs**. macOS systems using Apple Silicon (M series) or integrated graphics have no corresponding monitoring interface, so no GPU monitoring panel is provided under macOS.
 
----
+
 
 ## 🌟 Core Feature Highlights
 
@@ -156,4 +151,3 @@ The Ultimate Edition uses a **one-machine-one-code offline activation** mechanis
 The system's machine code is determined by your **CPU, motherboard, and operating system**:
 * **Worry-Free Hardware Upgrades**: Routine upgrades of GPU, hard drive, RAM, or power supply **do not affect** the system's activation status.
 * **Reset Triggers**: Machine code changes only occur when reinstalling the underlying operating system or replacing core components (CPU/motherboard).
-
