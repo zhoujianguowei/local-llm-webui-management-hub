@@ -1,13 +1,13 @@
-# Mixed Multimodal LLM Management System
+# Hybrid LLM Management System
 
 > ### 🌐 Language / 语言
-> [**English**](README_en.md) | [**中文**](README_zh.md)
+> **English** | [**中文**](README_zh.md)
 
 ---
 
 ## 📋 System Overview
 
-This system (Mixed Multimodal LLM Management System) is a comprehensive management platform for locally deployed large language models, integrating **file management, user permissions, model scheduling, AI chat, and system monitoring** into one secure, efficient, and user-friendly solution.
+This system (Hybrid LLM Management System) is a comprehensive management platform for locally deployed large language models, integrating **file management, user permissions, model scheduling, AI chat, and system monitoring** into one secure, efficient, and user-friendly solution.
 
 Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedules local GGUF-formatted large language models through llama.cpp on the backend, while also supporting OpenAI-compatible remote API integration. Its core objective is to address cumbersome path permission management, model parameter configuration, and resource monitoring in local model deployments.
 
@@ -26,7 +26,77 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 >
 > ⚠️ **GPU Monitoring Compatibility Note**: GPU monitoring depends on the `nvidia-smi` tool and **only supports systems with NVIDIA GPUs**. macOS systems using Apple Silicon (M series) or integrated graphics have no corresponding monitoring interface, so no GPU monitoring panel is provided under macOS.
 
----
+
+### Version History
+
+| Version | Changes |
+| ---- | :--- |
+| v1.1 | 1. Ultimate Edition AI chat supports automatic detection of local models, no manual API configuration needed; thinking level can be selected at model startup or during conversation<br />2. Added English language support, with Chinese/English switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including AI chat window abnormal closure prompts, path search popup height issues, etc. |
+| v1.0 | Initial release with basic file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
+
+
+
+
+## Installation Instructions (Demonstrated on Windows)
+
+### Official Test Environment Reference
+
+- **OS**: Windows 10 64-bit / Ubuntu 22.04 LTS / macOS (M1 Pro)
+- **CPU**: Intel i7-13700K / Dual Xeon E5-2696 v4
+- **GPU**: NVIDIA RTX 2080 Ti (11GB/22GB Modified)
+- **RAM**: 32GB / 128GB DDR4
+
+
+### Windows Installation Demo
+
+- Install JDK: [JDK 8 and above](https://www.oracle.com/java/technologies/downloads/#java8) (JDK 8 is recommended, tested across multiple platforms), and add the Java executable path to your system environment variables. On Linux or macOS, add the Java bin path to your PATH. ![JDK Environment Configuration](imgs/install-jdk-env.png)
+
+
+- Install [llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases): Download and extract based on your platform. **For Windows systems with NVIDIA GPUs, you also need to download the corresponding cudart resources and place them in the extracted directory.** I'm currently using an NVIDIA GPU with CUDA 13.3, so download cudart 13.3. ![llama.cpp and cudart Installation](imgs/install-llama-cpp-cudart.png)
+
+
+- Install the JAR package: Download the [latest compressed package](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases), extract it, then run the corresponding script. You can adjust JVM parameters as needed. ![JAR Download and Run Script](imgs/install-jar-release.png)
+
+
+![JAR Startup Configuration](imgs/install-jar-config.png)
+
+
+
+- Start and configure: After the JAR starts, open [http://localhost:8098/command/static/file/login.html](http://localhost:8098/command/static/file/login.html) in your browser. Default credentials are admin/admin. You must change your password after first login. ![Login Page](imgs/install-login-page.png)
+
+
+- After successful login, click **Update License** to update your machine's authorization code. **Click the question mark in the toolbar to view detailed usage guides and features.** ![License Update](imgs/install-license-update.png)
+
+![Help Guide](imgs/install-help-guide.png)
+
+- Model management configuration: On first entry to the model management page, fill in the directory containing GGUF model files and the llama.cpp executable path. The system will automatically detect and list available models. The **Model Naming And Split Merge** button shows detailed GGUF directory and naming conventions, with automatic shard detection and merge support. ![Model Management Configuration](imgs/install-model-config.png)
+
+![Model Naming and Split Merge](imgs/install-model-naming-merge.png)
+
+
+- Add the GPU nvidia-smi path: Use `where nvidia-smi` (Windows) or `which nvidia-smi` (Linux/macOS) to find the nvidia-smi system path, then add it in the model settings page. GPU information will be visible after configuration. ![Configure nvidia-smi Path](imgs/install-nvidia-smi-path.png)
+
+
+![GPU Information Display](imgs/install-gpu-info.png)
+
+![GPU Monitoring Panel](imgs/install-gpu-monitor.png)
+
+
+- Start the model ![Model Startup](imgs/install-model-start.png)
+
+![Model Running](imgs/install-model-running.png)
+
+
+
+- AI Chat: **Ultimate Edition v1.1 and above supports automatic detection of locally deployed models, with no need to configure OpenAPI or model thinking level parameters. If using v1.0 or Base Edition, OpenAPI configuration is required.**
+
+![AI Chat Demo](imgs/install-chat-demo.png)
+
+
+![AI Deep Thinking Mode](imgs/install-chat-thinking.png)
+
+
+
 
 ## 🌟 Core Feature Highlights
 
@@ -35,6 +105,7 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 - **Zero Database Dependency**: No need to install MySQL/PostgreSQL or other databases; single JAR deployment, runs on startup.
 - **Multi-Platform Support**: Compatible with **Windows**, **Linux (Ubuntu)**, and **macOS (Apple Silicon)**.
 - **Fully Offline Operation**: Frontend resources are 100% localized, with no dependency on external CDNs, meeting high-security intranet requirements.
+- **Thinking Mode Auto-Detection**: Supports automatic detection of thinking mode for GGUF files; thinking mode level can be specified at model startup or selected during AI chat.
 
 ### 2. File Management
 
@@ -94,12 +165,12 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
   - Copy File Paste: Copy files from a file manager or IDE and paste directly into the chat input box
 
 - **Code Generation**: AI-generated code blocks support one-click copy, save as local file, and collapsible display for long code.
-- **Deep Thinking Mode**: Supports deep thinking functionality for models such as qwen3.5, qwen3.6, gemma4, deepseek, etc. A highlighted lightbulb icon in the input box indicates the feature is enabled.
+- **Deep Thinking Mode**: Supports deep thinking functionality for models such as qwen3.5, qwen3.6, gemma4, deepseek-v4-flash, hy3, etc.
 - **System-Level Configuration**: Administrators can configure OpenAPI integration, model capability definitions (regex matching to enable/disable thinking mode), and per-role limits on attachment size and maximum message count.
 - **Conversation Statistics**: Real-time display of prompt prefill speed, decode speed, current conversation context ratio, and other performance metrics.
 
 ### 6. Deep Integration with llama.cpp Inference Engine
- **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. (GGUF auto-sharding still uses llama.cpp at the底层; for ik_llama.cpp sharding, manual merging may be required.)
+ **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. (GGUF auto-sharding still uses llama.cpp at the underlying level; for ik_llama.cpp sharding, manual merging may be required.)
 
 ![Model List](imgs/model-list-overview.png)
 
@@ -157,3 +228,16 @@ The system's machine code is determined by your **CPU, motherboard, and operatin
 * **Worry-Free Hardware Upgrades**: Routine upgrades of GPU, hard drive, RAM, or power supply **do not affect** the system's activation status.
 * **Reset Triggers**: Machine code changes only occur when reinstalling the underlying operating system or replacing core components (CPU/motherboard).
 
+---
+
+### 🛒 How to Obtain a Lifetime License?
+
+All release packages come with a built-in **30-day full-feature free trial (Ultimate Edition Trial)**. After the trial period expires, if you wish to purchase the lifetime version, please pay through the dedicated channels below.
+
+*Please fill in your **Machine UUID** and **email address to receive the license code** in the **Notes/Reference** field on the Wise payment page.*
+*(If you forget to fill them in at the time of payment, please send the payment receipt screenshot along with your machine code to `zhoujianguowei@gmail.com`. The license code will be manually issued within 24 hours.)*
+
+| Software Version | Lifetime Price | Offline Payment Link |
+| :--- | :--- | :--- |
+| 📦 **Base Edition** | **$9** / Lifetime | [Purchase via Wise](https://wise.com/pay/r/gm5d-VpLW7MCSEw) |
+| 👑 **Ultimate Edition** | **$19** / Lifetime | [Purchase via Wise](https://wise.com/pay/r/O6Dof1HeszgCgZA) |
