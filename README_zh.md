@@ -49,51 +49,51 @@
 
 ### windows安装演示示例
 
-- 安装jdk ：jdk8以及以上版本，https://www.oracle.com/java/technologies/downloads/#java8（推荐jdk8版本，该版本经过多平台测试），并将java可执行路径添加到系统环境变量 ，linux或者mac系统需要将java bin路径添加到path路径中![image-20260729162043884](imgs\image-20260729162043884.png)
+- 安装jdk ：[jdk8以及以上版本](https://www.oracle.com/java/technologies/downloads/#java8)（推荐jdk8版本，该版本经过多平台测试），并将java可执行路径添加到系统环境变量 ，linux或者mac系统需要将java bin路径添加到path路径中![image-20260729162043884](imgs/image-20260729162043884.png)
 
 
 
-- 安装llama.cpp：到https://github.com/ggml-org/llama.cpp/releases根据自身平台下载并进行解压，**对于nvidia卡的windows系统，还需要下载对应的cudart资源，然后将下载好的资源放入解压后的目录中**，我当前是n卡，并且使用的cuda版本是13.3，下载cudart13.3版本![image-20260729164643636](imgs\image-20260729164643636.png)
+- 安装[llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases)根据自身平台下载并进行解压，**对于nvidia卡的windows系统，还需要下载对应的cudart资源，然后将下载好的资源放入解压后的目录中**，我当前是n卡，并且使用的cuda版本是13.3，下载cudart13.3版本![image-20260729164643636](imgs/image-20260729164643636.png)
 
 
 
-- 安装启动jar包：到https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases下载最新版本的压缩包文件解压，之后运行对应的脚本即可，可以根据自己配置需要调整运行jvm参数![image-20260729164946870](imgs\image-20260729164946870.png)
+- 安装[最新版本的压缩包文件](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)解压，之后运行对应的脚本即可，可以根据自己配置需要调整运行jvm参数![image-20260729164946870](imgs/image-20260729164946870.png)
 
 
 
-![image-20260729165249063](imgs\image-20260729165249063.png)
+![image-20260729165249063](imgs/image-20260729165249063.png)
 
 
 
 
 
-- 启动部署，并进行基础配置，jar包启动完成之后，浏览器打开http://localhost:8098/command/static/file/login.html，初始账号密码是 admin admin，首次登陆成功后需要修改账号密码![image-20260729165553307](imgs\image-20260729165553307.png)
+- 启动部署，并进行基础配置，jar包启动完成之后，浏览器打开[http://localhost:8098/command/static/file/login.html](http://localhost:8098/command/static/file/login.html)，初始账号密码是 admin admin，首次登陆成功后需要修改账号密码![image-20260729165553307](imgs/image-20260729165553307.png)
 
 
 
-- 登录成功后，可以点击 **Update License** 按钮更新本机授权码，**工具栏页面的问号点击进去可以查看相信的使用指南以及功能**![image-20260729165756070](imgs\image-20260729165756070.png)
+- 登录成功后，可以点击 **Update License** 按钮更新本机授权码，**工具栏页面的问号点击进去可以查看相信的使用指南以及功能**![image-20260729165756070](imgs/image-20260729165756070.png)
 
-![image-20260729170425703](imgs\image-20260729170425703.png)
+![image-20260729170425703](imgs/image-20260729170425703.png)
 
-- 模型管理配置，首次进入模型管理页面，需要填写模型gguf文件所在目录以及llama.cpp执行文件所在目录，填写完成后系统会自动识别出来模型列表，**Model Naming And Split Merge** 按钮可以查看详细的gguf文件目录以及命名规范，同时支持gguf分片自动检测合并功能![image-20260729170156268](imgs\image-20260729170156268.png)
+- 模型管理配置，首次进入模型管理页面，需要填写模型gguf文件所在目录以及llama.cpp执行文件所在目录，填写完成后系统会自动识别出来模型列表，**Model Naming And Split Merge** 按钮可以查看详细的gguf文件目录以及命名规范，同时支持gguf分片自动检测合并功能![image-20260729170156268](imgs/image-20260729170156268.png)
 
-![image-20260729170244529](imgs\image-20260729170244529.png)
-
-
-
--  添加gpu nvidia-smi路径，使用 where nvidia-smi 查看nvidia-smi所在系统路径，并添加到模型设置页面，添加完成后就能看到gpu信息了![image-20260729171213493](imgs\image-20260729171213493.png)
+![image-20260729170244529](imgs/image-20260729170244529.png)
 
 
 
-![image-20260729171406373](imgs\image-20260729171406373.png)
-
-![image-20260729171442368](imgs\image-20260729171442368.png)
+-  添加gpu nvidia-smi路径，使用 where nvidia-smi 查看nvidia-smi所在系统路径，并添加到模型设置页面，添加完成后就能看到gpu信息了![image-20260729171213493](imgs/image-20260729171213493.png)
 
 
 
-- 启动模型![image-20260729192451918](imgs\image-20260729192451918.png)
+![image-20260729171406373](imgs/image-20260729171406373.png)
 
-![image-20260729192518149](imgs\image-20260729192518149.png)
+![image-20260729171442368](imgs/image-20260729171442368.png)
+
+
+
+- 启动模型![image-20260729192451918](imgs/image-20260729192451918.png)
+
+![image-20260729192518149](imgs/image-20260729192518149.png)
 
 
 
@@ -101,11 +101,11 @@
 
 - 进行ai对话，**v1.1和以上版本完全版，支持本地部署模型自动检测，无需配置openapi和模型思考等级参数，如果是v1.0或者是基础版需要配置openapi**
 
-![image-20260729193903276](imgs\image-20260729193903276.png)
+![image-20260729193903276](imgs/image-20260729193903276.png)
 
 
 
-![image-20260729194114981](imgs\image-20260729194114981.png)
+![image-20260729194114981](imgs/image-20260729194114981.png)
 
 
 
