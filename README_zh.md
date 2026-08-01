@@ -11,7 +11,7 @@
 
 系统基于 Java + Spring Boot 构建，后端通过 llama.cpp 调度本地 GGUF 格式的大语言模型，同时支持 OpenAI 兼容的远程 API 接入。其核心目标是解决本地模型部署中繁琐的路径权限管理、模型参数配置以及资源监控问题。
 
-**🔥 GGUF 模型思考模式自动检测**：系统内置智能检测引擎，可自动识别 GGUF 模型文件是否支持思考模式。已验证支持的模型包括：unsloth 量化的 qwen3.6 系列、hy3、deepseek-v4-flash-0731、inkling-small、minimax-m3 等常见开源模型。支持在模型启动时和 AI 对话运行时灵活选择思考等级，无需手动配置。
+**🔥 GGUF 模型思考模式自动检测**：通过识别 GGUF 文件内置的 Jinja 模板，自动检测模型是否支持思考模式。已验证支持的模型包括：unsloth 量化的 qwen3.6 系列、hy3、deepseek-v4-flash-0731、inkling-small、minimax-m3 等常见开源模型。支持在模型启动时和 AI 对话运行时灵活选择思考等级，无需手动配置。
 
 ![主界面](imgs/base_main.png)
 
