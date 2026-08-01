@@ -11,7 +11,11 @@ This system (Hybrid LLM Management System) is a comprehensive management platfor
 
 Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedules local GGUF-formatted large language models through llama.cpp on the backend, while also supporting OpenAI-compatible remote API integration. Its core objective is to address cumbersome path permission management, model parameter configuration, and resource monitoring in local model deployments.
 
+**🔥 GGUF Model Thinking Mode Auto-Detection**: The system features a built-in intelligent detection engine that automatically identifies whether GGUF model files support thinking mode. Verified supported models include: unsloth-quantized qwen3.6 series, hy3, deepseek-v4-flash-0731, inkling-small, minimax-m3, and other common open-source models. Supports flexible thinking level selection at both model startup and during AI chat runtime, with no manual configuration required.
+
 ![Main Interface](imgs/base_main.png)
+
+![Model Launch Thinking Mode](imgs/model-launch-thinking.png)
 
 **Version Information**
 
@@ -31,8 +35,9 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 | Version | Changes |
 | ---- | :--- |
-| v1.1 | 1. Ultimate Edition AI chat supports automatic detection of local models, no manual API configuration needed; thinking level can be selected at model startup or during conversation<br />2. Added English language support, with Chinese/English switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including AI chat window abnormal closure prompts, path search popup height issues, etc. |
-| v1.0 | Initial release with basic file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
+| **v1.11** | 1. Fixed model thinking mode auto-detection bug, added auto-detection support for inkling-small, minimax-m3, and deepseek-v4-flash-0731 models<br />2. Fixed model parameter import bug and AI chat page code rendering issues<br />3. AI Chat page UI display optimization |
+| **v1.1** | 1. Ultimate Edition AI chat supports automatic detection of local models, no manual API configuration needed; thinking level can be selected at model startup or during conversation; tested with unsloth's qwen3.6, gemma4, deepseek-v4-flash, hy3, and other models<br />2. Added English language support, with Chinese/English switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including AI chat window abnormal closure prompts, path search popup height issues, etc. |
+| **v1.0** | Initial release with basic file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
 
 
 
@@ -227,6 +232,13 @@ The Ultimate Edition uses a **one-machine-one-code offline activation** mechanis
 The system's machine code is determined by your **CPU, motherboard, and operating system**:
 * **Worry-Free Hardware Upgrades**: Routine upgrades of GPU, hard drive, RAM, or power supply **do not affect** the system's activation status.
 * **Reset Triggers**: Machine code changes only occur when reinstalling the underlying operating system or replacing core components (CPU/motherboard).
+
+**Version Compatibility Notes:**
+- **Base and Ultimate Edition licenses are not interchangeable**: Base Edition licenses only work with Base Edition, and Ultimate Edition licenses only work with Ultimate Edition.
+- **Same Major Version License Reuse**: Licenses within the same major version series can be reused. For example, v3.1, v3.2, and v3.53 all belong to the v3 series and their licenses are interchangeable.
+- **Worry-Free Minor Version Upgrades**: Blocking bug fixes and minor optimizations are released as minor version upgrades. Users can upgrade seamlessly, and existing licenses remain valid.
+- **Higher Version Licenses are Downward Compatible**: Higher version licenses can be used with lower versions. For example, an Ultimate Edition v3.53 license is compatible with v3.1, v3.2, and all v2 and v1 series versions.
+- **Lower Version Licenses Cannot be Used with Higher Versions**: For example, a v1 series license cannot be used on v2 or v3 series software.
 
 ---
 
