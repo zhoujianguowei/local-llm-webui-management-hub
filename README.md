@@ -11,7 +11,7 @@ This system (Hybrid LLM Management System) is a comprehensive management platfor
 
 Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedules local GGUF-formatted large language models through llama.cpp on the backend, while also supporting OpenAI-compatible remote API integration. Its core objective is to address cumbersome path permission management, model parameter configuration, and resource monitoring in local model deployments.
 
-**🔥 GGUF Model Thinking Mode Auto-Detection**: The system features a built-in intelligent detection engine that automatically identifies whether GGUF model files support thinking mode. Verified supported models include: unsloth-quantized qwen3.6 series, hy3, deepseek-v4-flash-0731, inkling-small, minimax-m3, and other common open-source models. Supports flexible thinking level selection at both model startup and during AI chat runtime, with no manual configuration required.
+**🔥 GGUF Model Thinking Mode Auto-Detection**: Automatically detects thinking mode support by recognizing the Jinja template embedded in GGUF model files. Verified supported models include: unsloth-quantized qwen3.6 series, hy3, deepseek-v4-flash-0731, inkling-small, minimax-m3, and other common open-source models. Supports flexible thinking level selection at both model startup and during AI chat runtime, with no manual configuration required.
 
 ![Main Interface](imgs/base_main.png)
 
