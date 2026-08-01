@@ -88,7 +88,7 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 
 
-- AI Chat: **Ultimate Edition v1.1 and above supports automatic detection of locally deployed models, with no need to configure OpenAPI or model thinking level parameters. If using v1.0 or Base Edition, OpenAPI configuration is required.**
+- AI Chat: **Ultimate Edition v1.1 and above (including v1.11+) supports automatic detection of locally deployed models, with no need to configure OpenAI API or model thinking level parameters. If using v1.0 or Base Edition, OpenAI API configuration is required.**
 
 ![AI Chat Demo](imgs/install-chat-demo.png)
 
@@ -166,11 +166,11 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 - **Code Generation**: AI-generated code blocks support one-click copy, save as local file, and collapsible display for long code.
 - **Deep Thinking Mode**: Supports deep thinking functionality for models such as qwen3.5, qwen3.6, gemma4, deepseek-v4-flash, hy3, etc.
-- **System-Level Configuration**: Administrators can configure OpenAPI integration, model capability definitions (regex matching to enable/disable thinking mode), and per-role limits on attachment size and maximum message count.
+- **System-Level Configuration**: Administrators can configure OpenAI API integration, model capability definitions (regex matching to enable/disable thinking mode), and per-role limits on attachment size and maximum message count.
 - **Conversation Statistics**: Real-time display of prompt prefill speed, decode speed, current conversation context ratio, and other performance metrics.
 
 ### 6. Deep Integration with llama.cpp Inference Engine
- **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. (GGUF auto-sharding still uses llama.cpp at the underlying level; for ik_llama.cpp sharding, manual merging may be required.)
+ **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. The ik_llama.cpp branch offers improved concurrency handling and acceleration for certain quantized models, providing extra flexibility for geeks who want to experiment with cutting-edge inference optimizations. (GGUF auto-sharding still uses llama.cpp at the underlying level; for ik_llama.cpp sharding, manual merging may be required.)
 
 ![Model List](imgs/model-list-overview.png)
 
@@ -234,7 +234,9 @@ The system's machine code is determined by your **CPU, motherboard, and operatin
 
 All release packages come with a built-in **30-day full-feature free trial (Ultimate Edition Trial)**. After the trial period expires, if you wish to purchase the lifetime version, please pay through the dedicated channels below.
 
-*Please fill in your **Machine UUID** and **email address to receive the license code** in the **Notes/Reference** field on the Wise payment page.*
+> **🔒 Privacy Guarantee**: No internet required for activation. The license key is generated entirely based on your hardware hash. We strictly collect zero analytics, telemetry, or user data.
+
+*Please fill in your **Machine Code** and **email address to receive the license code** in the **Notes/Reference** field on the Wise payment page.*
 *(If you forget to fill them in at the time of payment, please send the payment receipt screenshot along with your machine code to `zhoujianguowei@gmail.com`. The license code will be manually issued within 24 hours.)*
 
 | Software Version | Lifetime Price | Offline Payment Link |

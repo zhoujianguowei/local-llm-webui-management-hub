@@ -11,7 +11,11 @@ This system (Hybrid LLM Management System) is a comprehensive management platfor
 
 Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedules local GGUF-formatted large language models through llama.cpp on the backend, while also supporting OpenAI-compatible remote API integration. Its core objective is to address cumbersome path permission management, model parameter configuration, and resource monitoring in local model deployments.
 
+**🔥 GGUF Model Thinking Mode Auto-Detection**: The system features a built-in intelligent detection engine that automatically identifies whether GGUF model files support thinking mode. Verified supported models include: unsloth-quantized qwen3.6 series, hy3, deepseek-v4-flash-0731, inkling-small, minimax-m3, and other common open-source models. Supports flexible thinking level selection at both model startup and during AI chat runtime, with no manual configuration required.
+
 ![Main Interface](imgs/base_main.png)
+
+![Model Launch Thinking Mode](imgs/model-launch-thinking.png)
 
 **Version Information**
 
@@ -31,8 +35,9 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 | Version | Changes |
 | ---- | :--- |
-| v1.1 | 1. Ultimate Edition AI chat supports automatic detection of local models, no manual API configuration needed; thinking level can be selected at model startup or during conversation<br />2. Added English language support, with Chinese/English switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including AI chat window abnormal closure prompts, path search popup height issues, etc. |
-| v1.0 | Initial release with basic file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
+| **v1.11** | 1. Fixed model thinking mode auto-detection bug, added auto-detection support for inkling-small, minimax-m3, and deepseek-v4-flash-0731 models<br />2. Fixed model parameter import bug and AI chat page code rendering issues<br />3. AI Chat page UI display optimization |
+| **v1.1** | 1. Ultimate Edition AI chat supports automatic detection of local models, no manual API configuration needed; thinking level can be selected at model startup or during conversation; tested with unsloth's qwen3.6, gemma4, deepseek-v4-flash, hy3, and other models<br />2. Added English language support, with Chinese/English switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including AI chat window abnormal closure prompts, path search popup height issues, etc. |
+| **v1.0** | Initial release with basic file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
 
 
 
@@ -88,7 +93,7 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 
 
-- AI Chat: **Ultimate Edition v1.1 and above supports automatic detection of locally deployed models, with no need to configure OpenAPI or model thinking level parameters. If using v1.0 or Base Edition, OpenAPI configuration is required.**
+- AI Chat: **Ultimate Edition v1.1 and above (including v1.11+) supports automatic detection of locally deployed models, with no need to configure OpenAI API or model thinking level parameters. If using v1.0 or Base Edition, OpenAI API configuration is required.**
 
 ![AI Chat Demo](imgs/install-chat-demo.png)
 
@@ -166,11 +171,11 @@ Built on Java + Spring Boot with Bootstrap 5 on the frontend, the system schedul
 
 - **Code Generation**: AI-generated code blocks support one-click copy, save as local file, and collapsible display for long code.
 - **Deep Thinking Mode**: Supports deep thinking functionality for models such as qwen3.5, qwen3.6, gemma4, deepseek-v4-flash, hy3, etc.
-- **System-Level Configuration**: Administrators can configure OpenAPI integration, model capability definitions (regex matching to enable/disable thinking mode), and per-role limits on attachment size and maximum message count.
+- **System-Level Configuration**: Administrators can configure OpenAI API integration, model capability definitions (regex matching to enable/disable thinking mode), and per-role limits on attachment size and maximum message count.
 - **Conversation Statistics**: Real-time display of prompt prefill speed, decode speed, current conversation context ratio, and other performance metrics.
 
 ### 6. Deep Integration with llama.cpp Inference Engine
- **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. (GGUF auto-sharding still uses llama.cpp at the underlying level; for ik_llama.cpp sharding, manual merging may be required.)
+ **Also supports adding ik_llama.cpp as an inference engine (optional)**. If this path is configured, model startup supports selecting between llama.cpp and ik_llama.cpp inference engines. The ik_llama.cpp branch offers improved concurrency handling and acceleration for certain quantized models, providing extra flexibility for geeks who want to experiment with cutting-edge inference optimizations. (GGUF auto-sharding still uses llama.cpp at the underlying level; for ik_llama.cpp sharding, manual merging may be required.)
 
 ![Model List](imgs/model-list-overview.png)
 
@@ -228,13 +233,22 @@ The system's machine code is determined by your **CPU, motherboard, and operatin
 * **Worry-Free Hardware Upgrades**: Routine upgrades of GPU, hard drive, RAM, or power supply **do not affect** the system's activation status.
 * **Reset Triggers**: Machine code changes only occur when reinstalling the underlying operating system or replacing core components (CPU/motherboard).
 
+**Version Compatibility Notes:**
+- **Base and Ultimate Edition licenses are not interchangeable**: Base Edition licenses only work with Base Edition, and Ultimate Edition licenses only work with Ultimate Edition.
+- **Same Major Version License Reuse**: Licenses within the same major version series can be reused. For example, v3.1, v3.2, and v3.53 all belong to the v3 series and their licenses are interchangeable.
+- **Worry-Free Minor Version Upgrades**: Blocking bug fixes and minor optimizations are released as minor version upgrades. Users can upgrade seamlessly, and existing licenses remain valid.
+- **Higher Version Licenses are Downward Compatible**: Higher version licenses can be used with lower versions. For example, an Ultimate Edition v3.53 license is compatible with v3.1, v3.2, and all v2 and v1 series versions.
+- **Lower Version Licenses Cannot be Used with Higher Versions**: For example, a v1 series license cannot be used on v2 or v3 series software.
+
 ---
 
 ### 🛒 How to Obtain a Lifetime License?
 
 All release packages come with a built-in **30-day full-feature free trial (Ultimate Edition Trial)**. After the trial period expires, if you wish to purchase the lifetime version, please pay through the dedicated channels below.
 
-*Please fill in your **Machine UUID** and **email address to receive the license code** in the **Notes/Reference** field on the Wise payment page.*
+> **🔒 Privacy Guarantee**: No internet required for activation. The license key is generated entirely based on your hardware hash. We strictly collect zero analytics, telemetry, or user data.
+
+*Please fill in your **Machine Code** and **email address to receive the license code** in the **Notes/Reference** field on the Wise payment page.*
 *(If you forget to fill them in at the time of payment, please send the payment receipt screenshot along with your machine code to `zhoujianguowei@gmail.com`. The license code will be manually issued within 24 hours.)*
 
 | Software Version | Lifetime Price | Offline Payment Link |
