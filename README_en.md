@@ -15,7 +15,7 @@
 - [📋 Project Overview](#-project-overview)
 - [🌟 Feature Details](#-feature-details)
 - [🏷️ Version Information](#-version-information)
-- [⚠️ Compatibility & Known Limitations](#-compatibility--known-limitations)
+- [❗ Compatibility & Known Limitations](#-compatibility--known-limitations)
 - [🚀 Quick Start](#-quick-start)
 - [🛠️ Installation Guide](#-installation-guide)
 - [👥 User Roles](#-user-roles)
@@ -142,7 +142,7 @@ Built on **Java + Spring Boot** (with Bootstrap 5 on the frontend), the system s
 
 ---
 
-## 🏷️ Version Information
+## 🏷 Version Information
 
 ### Edition Comparison
 
@@ -164,7 +164,7 @@ Built on **Java + Spring Boot** (with Bootstrap 5 on the frontend), the system s
 
 ---
 
-## ⚠️ Compatibility & Known Limitations
+## ❗ Compatibility & Known Limitations
 
 | Item | Description |
 | :--- | :--- |
@@ -182,7 +182,7 @@ Built on **Java + Spring Boot** (with Bootstrap 5 on the frontend), the system s
 
 ---
 
-## 🛠️ Installation Guide
+## 🛠 Installation Guide
 
 > The complete installation flow below is demonstrated on **Windows**; Linux / macOS steps are similar.
 
