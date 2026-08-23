@@ -7,7 +7,7 @@
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Java%20Web-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Inference](https://img.shields.io/badge/Inference-llama.cpp%20%7C%20OpenAI%20API-blue)](https://github.com/ggml-org/llama.cpp)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)](#)
-[![Release](https://img.shields.io/badge/Release-v1.12-brightgreen)](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)
+[![Release](https://img.shields.io/badge/Release-v1.12-brightgreen)](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)
 [![License](https://img.shields.io/badge/License-Commercial%20%2B%2030%20Days%20Trial-red)](#-how-to-obtain-a-lifetime-license)
 
 **📖 Table of Contents**
@@ -160,7 +160,7 @@ Built on **Java + Spring Boot** (with Bootstrap 5 on the frontend), the system s
 | **v1.1** | 1. Ultimate Edition AI chat supports automatic detection of local models with no manual API configuration; thinking level can be selected at model startup or during conversation (self-tested with unsloth's qwen3.6, gemma4, deepseek-v4-flash, hy3, and other models)<br />2. Added English language support with Chinese/English UI switching<br />3. Added more llama.cpp parameter support, including primary GPU, repeat-penalty, top-k, top-p, etc.<br />4. Fixed various bugs, including abnormal AI chat window closure prompts and path search popup height issues |
 | **v1.0** | Initial release with file management, AI chat, user management, model management, and scheduled shutdown/reboot features |
 
-> 💡 Only major versions are listed above; see [Releases](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases) for the complete changelog.
+> 💡 Only major versions are listed above; see [Releases](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases) for the complete changelog.
 
 ---
 
@@ -177,7 +177,7 @@ Built on **Java + Spring Boot** (with Bootstrap 5 on the frontend), the system s
 ## 🚀 Quick Start
 
 1. **Prepare the environment**: Install JDK 8 or above and download the [llama.cpp](https://github.com/ggml-org/llama.cpp/releases) executable (see the [Installation Guide](#-installation-guide) for details).
-2. **Download & run**: Download the [latest release package](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases), extract it, and run the launcher script for your platform.
+2. **Download & run**: Download the [latest release package](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases), extract it, and run the launcher script for your platform.
 3. **Log in & configure**: Open [http://localhost:8098/command/static/file/login.html](http://localhost:8098/command/static/file/login.html) in your browser. Default credentials are `admin` / `admin`; please change them after the first login.
 
 ---
@@ -207,7 +207,7 @@ Download and extract [llama.cpp releases](https://github.com/ggml-org/llama.cpp/
 
 **3. Download & Extract the Release Package**
 
-Download the [latest release package](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases), extract it, and run the corresponding launcher script. JVM parameters can be adjusted as needed.
+Download the [latest release package](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases), extract it, and run the corresponding launcher script. JVM parameters can be adjusted as needed.
 ![JAR Download and Run Script](imgs/install-jar-release.png)
 ![JAR Startup Configuration](imgs/install-jar-config.png)
 
@@ -322,7 +322,7 @@ A: Ultimate Edition v1.1 and above supports automatic detection of locally deplo
 
 ## 📮 Contact & Support
 
-- **Project**: [github.com/zhoujianguowei/local-llm-webui-management-hub](https://github.com/zhoujianguowei/local-llm-webui-management-hub)
-- **Downloads**: [Releases page](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)
+- **Project**: [github.com/zhoujianguowei/hybrid-llm-management-system](https://github.com/zhoujianguowei/hybrid-llm-management-system)
+- **Downloads**: [Releases page](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)
 - **Feedback**: Bug reports and feature suggestions are welcome via GitHub Issues
 - **Licensing / Purchase Inquiries**: `zhoujianguowei@gmail.com`

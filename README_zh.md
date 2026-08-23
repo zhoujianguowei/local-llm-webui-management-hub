@@ -7,7 +7,7 @@
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Java%20Web-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Inference](https://img.shields.io/badge/Inference-llama.cpp%20%7C%20OpenAI%20API-blue)](https://github.com/ggml-org/llama.cpp)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)](#)
-[![Release](https://img.shields.io/badge/Release-v1.12-brightgreen)](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)
+[![Release](https://img.shields.io/badge/Release-v1.12-brightgreen)](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)
 [![License](https://img.shields.io/badge/License-Commercial%20%2B%2030%20Days%20Trial-red)](#-如何获取终身授权)
 
 **📖 目录**
@@ -161,7 +161,7 @@
 | **v1.1** | 1. 完全版 AI 对话支持本地模型自动检测，无需手动配置 API，支持模型启动时或对话运行时选择思考等级，已自测验证 unsloth 的 qwen3.6、gemma4、deepseek-v4-flash 以及 hy3 等模型<br />2. 新增英语语言支持，界面支持中/英切换<br />3. 增加更多 llama.cpp 参数支持，包括主 GPU、repeat-penalty、top-k、top-p 等参数<br />4. 修复部分 bug，包括 AI 对话窗口异常关闭提示、路径搜索弹窗高度异常等问题 |
 | **v1.0** | 首个发布版本，实现文件管理、AI 对话、用户管理、模型管理、定时开关机等基础功能 |
 
-> 💡 上表仅列出主要版本变更，完整更新记录请见 [Releases](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)。
+> 💡 上表仅列出主要版本变更，完整更新记录请见 [Releases](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)。
 
 ---
 
@@ -178,7 +178,7 @@
 ## 🚀 快速开始
 
 1. **准备环境**：安装 JDK 8 及以上版本，并下载 [llama.cpp](https://github.com/ggml-org/llama.cpp/releases) 可执行文件（详见 [安装说明](#-安装说明)）。
-2. **下载运行**：下载[最新发布包](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)，解压后运行对应平台的启动脚本即可。
+2. **下载运行**：下载[最新发布包](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)，解压后运行对应平台的启动脚本即可。
 3. **登录配置**：浏览器打开 [http://localhost:8098/command/static/file/login.html](http://localhost:8098/command/static/file/login.html)，初始账号密码为 `admin` / `admin`，首次登录成功后请修改账号密码。
 
 ---
@@ -208,7 +208,7 @@
 
 **3. 下载并解压发布包**
 
-下载[最新版本的压缩包文件](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)，解压后运行对应的启动脚本即可，可根据需要调整 JVM 参数。
+下载[最新版本的压缩包文件](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)，解压后运行对应的启动脚本即可，可根据需要调整 JVM 参数。
 ![JAR包下载与运行脚本](imgs/install-jar-release.png)
 ![JAR启动配置](imgs/install-jar-config.png)
 
@@ -323,7 +323,7 @@ A：v1.1 及以上的完全版支持本地部署模型自动检测，无需手�
 
 ## 📮 联系方式与支持
 
-- **项目地址**：[github.com/zhoujianguowei/local-llm-webui-management-hub](https://github.com/zhoujianguowei/local-llm-webui-management-hub)
-- **下载发布**：[Releases 页面](https://github.com/zhoujianguowei/local-llm-webui-management-hub/releases)
+- **项目地址**：[github.com/zhoujianguowei/hybrid-llm-management-system](https://github.com/zhoujianguowei/hybrid-llm-management-system)
+- **下载发布**：[Releases 页面](https://github.com/zhoujianguowei/hybrid-llm-management-system/releases)
 - **问题反馈**：欢迎通过 GitHub Issues 提交 Bug 与功能建议
 - **授权/购买咨询**：`zhoujianguowei@gmail.com`
